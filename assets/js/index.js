@@ -1,7 +1,7 @@
 //DOM emelements,API
 const APIKey = "78413dd4b50d8c825aabcc715b58e98b";
 const searchButonEl = document.getElementById("search-button");
-const usersInputEl = document.getElementById("city-input");
+const usersInputEl = document.getElementById("city-input").value;
 const displayCurent = document.getElementById("current-day");
 const main = document.getElementById("main-temp");
 const weather = document.getElementById("icon");
@@ -10,7 +10,7 @@ const text = document.getElementById("city-input");
 const localStr = localStorage.getItem('input[type ="text]');
 const savedSearch = document.querySelector("saved");
 
-saved.textContent = text.value;
+saved.textContent = text;
 //fetching api
 
 searchButonEl.addEventListener("click", function () {
@@ -32,7 +32,7 @@ searchButonEl.addEventListener("click", function () {
     })
     .then(function (data) {
       console.log(data);
-      weather.src = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
+      weather.src = "http://openweathermap.org/img/wn/" + data.weather[1].icon + "@2x.png";
       wind.textContent = data.wind.speed;
       main.textContent = data.main.temp;
       localStorage.setItem("localStr",text)
