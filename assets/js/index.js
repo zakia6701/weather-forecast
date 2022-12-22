@@ -6,10 +6,11 @@ const displayCurent = document.getElementById("current-day");
 const main = document.getElementById("main-temp");
 const weather = document.getElementById("icon");
 const wind = document.getElementById("wind-speed");
-const text = document.querySelector('input[type ="text]');
+const text = document.getElementById("city-input");
 const localStr = localStorage.getItem('input[type ="text]');
 const savedSearch = document.querySelector("saved");
-saved.textContent = text;
+
+saved.textContent = text.value;
 //fetching api
 
 searchButonEl.addEventListener("click", function () {
