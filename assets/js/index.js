@@ -4,7 +4,7 @@ const searchButonEl = document.getElementById("search-button");
 const usersInputEl = document.getElementById("city-input");
 const displayCurent = document.getElementById("current-day");
 const main = document.getElementById("main-temp");
-const weather = document.getElementById("temp");
+const weather = document.getElementById("icon");
 const wind = document.getElementById("wind-speed");
 //fetching api
 
@@ -27,11 +27,30 @@ searchButonEl.addEventListener("click", function () {
     })
     .then(function (data) {
       console.log(data);
-      main.textContent = data.weather[0].description;
+      weather.textContent = data.weather[0].icon;
       wind.textContent = data.wind.speed;
-      main.textContent = data.main.feels_like;
+      main.textContent = data.main.temp;
     });
 });
 // })
 
-function getData() {}
+searchButonEl.addEventListener("click", function () {
+  const city = usersInputEl.value;
+  const foreCast ="https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&Appid=" + APIKey + "&units=imperial"
+
+  fetch(foreCast)
+    .then(function (response) {
+      console.log(response.status);
+      if (response.status !== 200) {
+        displayCurent.textContent = response.status;
+      }
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      // weather.textContent = data.weather[0].icon;
+      // wind.textContent = data.wind.speed;
+      // main.textContent = data.main.feels_like;
+    });
+});
+// })
