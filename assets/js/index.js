@@ -6,6 +6,10 @@ const displayCurent = document.getElementById("current-day");
 const main = document.getElementById("main-temp");
 const weather = document.getElementById("icon");
 const wind = document.getElementById("wind-speed");
+const text = document.querySelector('input[type ="text]');
+const localStr = localStorage.getItem('input[type ="text]');
+const savedSearch = document.querySelector("saved");
+saved.textContent = text;
 //fetching api
 
 searchButonEl.addEventListener("click", function () {
@@ -27,16 +31,22 @@ searchButonEl.addEventListener("click", function () {
     })
     .then(function (data) {
       console.log(data);
-      weather.textContent = data.weather[0].icon;
+      weather.src = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
       wind.textContent = data.wind.speed;
       main.textContent = data.main.temp;
+      localStorage.setItem("localStr",text)
     });
 });
 // })
 
 searchButonEl.addEventListener("click", function () {
   const city = usersInputEl.value;
-  const foreCast ="https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&Appid=" + APIKey + "&units=imperial"
+  const foreCast =
+    "https://api.openweathermap.org/data/2.5/forecast?q=" +
+    city +
+    "&Appid=" +
+    APIKey +
+    "&units=imperial";
 
   fetch(foreCast)
     .then(function (response) {
@@ -48,9 +58,15 @@ searchButonEl.addEventListener("click", function () {
     })
     .then(function (data) {
       console.log(data);
-      // weather.textContent = data.weather[0].icon;
-      // wind.textContent = data.wind.speed;
-      // main.textContent = data.main.feels_like;
+      for (i = 1; i <= 5; i++) {
+        const temp = document.querySelector('#temp-' + i);
+        temp.textContent = data.list[8 * i - 8].main.temp;
+        const date = document.querySelector('#date-' +i);
+        date.textContent = data.list[8 * i -8].dt_txt;
+        const speed = document.querySelector('#speed-' + i);
+        speed.textContent = data.list[8 * i -8].wind.speed
+        localStorage.setItem("localStr",text)
+      }
     });
 });
 // })
