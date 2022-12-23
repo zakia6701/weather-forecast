@@ -10,32 +10,32 @@ const text = document.getElementById("city-input");
 const localStr = localStorage.getItem('input[type ="text]');
 const savedSearch = document.querySelector("saved");
 
-saved.textContent = text;
 //fetching api
 
 searchButonEl.addEventListener("click", function () {
   const city = usersInputEl.value;
   const curentWeather =
-    "https://api.openweathermap.org/data/2.5/weather?q=" +
-    city +
-    "&appid=" +
-    APIKey +
-    "&units=imperial";
-
+  "https://api.openweathermap.org/data/2.5/weather?q=" +
+  city +
+  "&appid=" +
+  APIKey +
+  "&units=imperial";
+  
   fetch(curentWeather)
-    .then(function (response) {
-      console.log(response.status);
-      if (response.status !== 200) {
-        displayCurent.textContent = response.status;
-      }
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      weather.src = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
-      wind.textContent = data.wind.speed;
-      main.textContent = data.main.temp;
-      localStorage.setItem("localStr",text)
+  .then(function (response) {
+    console.log(response.status);
+    if (response.status !== 200) {
+      displayCurent.textContent = response.status;
+    }
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+    weather.src = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
+    wind.textContent = data.wind.speed;
+    main.textContent = data.main.temp;
+    localStorage.setItem("localStr",city)
+    saved.textContent = city;
     });
 });
 // })
