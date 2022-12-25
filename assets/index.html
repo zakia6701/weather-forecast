@@ -13,25 +13,25 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body class="p-3 mb-2 bg-secondary text-white text-dark" >
     <header>
-      <h1>Weather Dashboard</h1>
+      <h1 class="mx-auto" style="width: 200px;" >Weather Dashboard</h1>
     </header>
-    <main class="main-page">
-      <div class="left-collum">
+    <main class="p-3 mb-2 bg-secondary text-white text-dark" id="main-page">
+      <div class="">
         <section>
           <h1>Choose a city:</h1>
-          <input type="text" id="city-input" placeholder="City Name"/>
-          <button id="search-button">Search</button>
+          <input type="text" id="city-input" placeholder="City Name" class="shadow-lg p-3 mb-5 bg-white rounded"/>
+          <button class="btn btn-info" id="search-button">Search</button>
         </section>
 
-        <section>
-          <p>Recent searches:</p>
+        <section class="border-left border-info" id="history">
+          <p class="badge badge-primary text-wrap border" style="width: 10rem;">Recent searches:</p>
           <p id="saved"></p>
         </section>
       </div>
 
-      <div class="right-collum">
+      <div class="p-3 mb-2 bg-primary text-white" id="right-collum">
         <section id="current-day">Curent Day Forecast:</section>
 
         <img id="icon"></img>
@@ -40,34 +40,34 @@
 
         <section id="five-days">Five Day Forecast:</section>
 
-        <div id="day-1">
-          <p id="date-1"></p>
-          <p id="temp-1"></p>
-          <p id="speed-1"></p>
+        <div class="p-3 mb-2 bg-secondary text-white card text-center" id="day-1">
+          <p class= "card-text" id="date-1"></p>
+          <p class= "card-text" id="temp-1"></p>
+          <p class= "card-text" id="speed-1"></p>
         </div>
 
-        <div id="day-2">
-          <p id="date-2"></p>
-          <p id="temp-2"></p>
-          <p id="speed-2"></p>
+        <div class="p-3 mb-2 bg-secondary text-white card text-center" id="day-2">
+          <p class= "card-text" id="date-2"></p>
+          <p class= "card-text" id="temp-2"></p>
+          <p class= "card-text" id="speed-2"></p>
         </div>
 
-        <div id="day-3">
-          <p id="date-3"></p>
-          <p id="temp-3"></p>
-          <p id="speed-3"></p>
+        <div class="p-3 mb-2 bg-secondary text-white card text-center" id="day-3">
+          <p class= "card-text" id="date-3"></p>
+          <p class= "card-text" id="temp-3"></p>
+          <p class= "card-text" id="speed-3"></p>
         </div>
 
-        <div id="day-4">
-          <p id="date-4"></p>
-          <p id="temp-4"></p>
-          <p id="speed-4"></p>
+        <div class="p-3 mb-2 bg-secondary text-white card text-center" id="day-4">
+          <p class= "card-text" id="date-4"></p>
+          <p class= "card-text" id="temp-4"></p>
+          <p class= "card-text" id="speed-4"></p>
         </div>
 
-        <div id="day-5">
-          <p id="date-5"></p>
-          <p id="temp-5"></p>
-          <p id="speed-5"></p>
+        <div class="p-3 mb-2 bg-secondary text-white card text-center" id="day-5">
+          <p class= "card-text" id="date-5"></p>
+          <p class= "card-text" id="temp-5"></p>
+          <p class= "card-text" id="speed-5"></p>
         </div>
 
       </div>

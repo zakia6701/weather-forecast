@@ -7,9 +7,9 @@ const main = document.getElementById("main-temp");
 const weather = document.getElementById("icon");
 const wind = document.getElementById("wind-speed");
 const text = document.getElementById("city-input");
-const localStr = localStorage.getItem('input[type ="text]');
+const history = document.getElementById("history")
+const localStr = localStorage.getItem('input');
 const savedSearch = document.querySelector("saved");
-
 //fetching api
 
 searchButonEl.addEventListener("click", function () {
@@ -34,9 +34,12 @@ searchButonEl.addEventListener("click", function () {
     weather.src = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png";
     wind.textContent = data.wind.speed;
     main.textContent = data.main.temp;
-    localStorage.setItem("localStr",city)
+    localStorage.setItem("localStr",localStr)
+    const newTag = document.createElement('p')
+    history.append(newTag)
     saved.textContent = city;
-    });
+    
+  });
 });
 // })
 
@@ -66,7 +69,7 @@ searchButonEl.addEventListener("click", function () {
         date.textContent = data.list[8 * i -8].dt_txt;
         const speed = document.querySelector('#speed-' + i);
         speed.textContent = data.list[8 * i -8].wind.speed
-        localStorage.setItem("localStr",text)
+        localStorage.setItem("localStr",city)
       }
     });
 });
