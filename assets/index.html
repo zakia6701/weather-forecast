@@ -15,58 +15,73 @@
   </head>
   <body class="p-3 mb-2 bg-secondary text-white text-dark" >
     <header>
-      <h1 class="mx-auto" style="width: 200px;" >Weather Dashboard</h1>
+      <h1 class="mx-auto text-info text-monospace" style="width: 200px;" >Weather Dashboard</h1>
     </header>
     <main class="p-3 mb-2 bg-secondary text-white text-dark" id="main-page">
       <div class="">
         <section>
-          <h1>Choose a city:</h1>
+          <h1 class="text-info">Choose a city</h1>
           <input type="text" id="city-input" placeholder="City Name" class="shadow-lg p-3 mb-5 bg-white rounded"/>
           <button class="btn btn-info" id="search-button">Search</button>
         </section>
 
-        <section class="border-left border-info" id="history">
-          <p class="badge badge-primary text-wrap border" style="width: 10rem;">Recent searches:</p>
+        <section class="border-left border-info text-right" id="history">
+          <p  class="badge badge-primary text-wrap border text-info" style="width: 10rem;"> Recent searches:</p>
           <p id="saved"></p>
         </section>
       </div>
 
-      <div class="p-3 mb-2 bg-primary text-white" id="right-collum">
+      <div class="p-3 mb-2 bg-primary text-white col px-md-5" id="right-collum">
         <section id="current-day">Curent Day Forecast:</section>
 
         <img id="icon"></img>
         <p id="main-temp">Tempature:</p>
         <p id="wind-speed">Wind Speed:</p>
-
-        <section id="five-days">Five Day Forecast:</section>
-
-        <div class="p-3 mb-2 bg-secondary text-white card text-center" id="day-1">
+        
+        <section class="text-center col px-md-5"id="five-days">Five Day Forecast:</section>
+        
+        <div class="p-3 mb-2 bg-secondary text-white card text-center w-25 p-3 d-inline-block" id="day-1">
+          <p>Date/Time:</p>
           <p class= "card-text" id="date-1"></p>
+          <p>Tempature:</p>
           <p class= "card-text" id="temp-1"></p>
+          <p>Wind Speed:</p>
           <p class= "card-text" id="speed-1"></p>
         </div>
 
-        <div class="p-3 mb-2 bg-secondary text-white card text-center" id="day-2">
+        <div class="p-3 mb-2 bg-secondary text-white card text-center  w-25 p-3 d-inline-block" d-inline-block id="day-2">
+         <p>Date/Time:</p>
           <p class= "card-text" id="date-2"></p>
+          <p>Tempature:</p>
+
           <p class= "card-text" id="temp-2"></p>
           <p class= "card-text" id="speed-2"></p>
         </div>
 
-        <div class="p-3 mb-2 bg-secondary text-white card text-center" id="day-3">
+        <div class="p-3 mb-2 bg-secondary text-white card text-center w-25 p-3 d-inline-block" id="day-3">
           <p class= "card-text" id="date-3"></p>
+          <p>Date/Time:</p>
           <p class= "card-text" id="temp-3"></p>
+          <p>Tempature:</p>
+
           <p class= "card-text" id="speed-3"></p>
         </div>
 
-        <div class="p-3 mb-2 bg-secondary text-white card text-center" id="day-4">
+        <div class="p-3 mb-2 bg-secondary text-white card text-center w-25 p-3 d-inline-block" id="day-4">
           <p class= "card-text" id="date-4"></p>
+          <p>Date/Time:</p>
           <p class= "card-text" id="temp-4"></p>
+          <p>Tempature:</p>
+
           <p class= "card-text" id="speed-4"></p>
         </div>
 
-        <div class="p-3 mb-2 bg-secondary text-white card text-center" id="day-5">
+        <div class="p-3 mb-2 bg-secondary text-white card text-center  w-25 p-3 d-inline-block" id="day-5">
           <p class= "card-text" id="date-5"></p>
+          <p>Date/Time:</p>
           <p class= "card-text" id="temp-5"></p>
+          <p>Tempature:</p>
+
           <p class= "card-text" id="speed-5"></p>
         </div>
 
